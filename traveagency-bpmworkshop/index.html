@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Red Hat JBoss BPM Suite Workshop</title>
+		<title>Red Hat JBoss BPM Suite - Building the JBoss Travel Agency Workshop</title>
 
-		<meta name="description" content="Online JBoss BPM workshop.">
+		<meta name="description" content="Online BPM workshop.">
 		<meta name="author" content="Eric D. Schabell">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,73 +42,176 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-                <section data-background="images/rh-images/rh-bg-start.jpg" data-background-size="cover" data-background-position="center bottom">
-                    <div style="width: 1056px; height: 450px; color: white">
-						<h2 style="color: white;">Building a</h2>
-                        <h2 style="color: white;">JBoss Travel Agency</h2>
-                        <h4 style="color: white;">with Red Hat JBoss BPM Suite</h4>
-                        <!--- h5 style="color: white;">(A Red Hat Summit 2015 Lab)</h5 -->
-                    </div>
-                    <div style="width: 600px; height: 300px; text-align: left; color: white">
-                        Eric D. Schabell<br/>
-                        JBoss Technology Evangelist<br/>
-                        <a href="http://twitter.com/ericschabell" style="color: red" target="_blank">@ericschabell</a><br/>
-                        <a href="http://schabell.org" style="color: red">http://schabell.org</a>
-                    </div>
-                    <aside class="notes">Welcome to the workshop!</aside>
-                </section>
-
-                <section>
-                    <div style="width: 1056px; height: 200px; color: white">
-                        <h1>Introduction</h1>
-                    </div>
-                    <div style="width: 1056px; height: 150px; color: white">
-                        <h2>JBoss BPM Suite & BRMS</h2>
+				<section>
+                    <div style="width: 1056px; height: 250px; color: white">
+                        <h2>Workshop</h2>
+                        <h3>Building a JBoss BPM Travel Agency</h3>
                     </div>
                     <div style="width: 1056px; height: 300px;">
-                        <h3><a href="introduction.html" target="_blank" style="color: red">Get started with rules, events, & process overview presentation.</a></h3>
-                    </div>
-                </section>
-
-                <section>
-                    <div style="width: 1056px; height: 200px; color: white">
-                        <h1>JBoss BRMS</h1>
-                    </div>
-                    <div style="width: 1056px; height: 150px; color: white">
-                        <h3>Looking for JBoss BRMS Workshop?</h3>
-                    </div>
-                    <div style="width: 1056px; height: 200px;">
-                        <h5>
-                            Here is an online workshop will teach you how to build an online web shop by designing various
-                            rules, events and a ruleflow. The results will be your very own JBoss BRMS Cool Store</a>.
-                        </h5>
-                        <h5><i><a href="http://bpmworkshop-onthe.rhcloud.com/lab01.html" target="_blank" style="color: red">Jump to JBoss BRMS Cool Store workshop</a></i></h5>
-                    </div>
-                </section>
-
-                <section>
-                    <div style="width: 1056px; height: 200px; color: white">
-                        <h1>JBoss BPM Suite</h1>
-                    </div>
-                    <div style="width: 1056px; height: 150px; color: white">
-                        <h2>JBoss BPM Travel Agency</h2>
-                    </div>
-                    <div style="width: 1056px; height: 250px;">
                         <h5>
                             This workshop will teach you how to build a business process for a company that wants
                             to automate its travel agency booking process. This project you will build entirely from the
                             ground up, installing JBoss BPM Suite, building rules, processes, tasks, data model and
-                            forms. The results will be your very own JBoss BPM Travel Agency. Let's get started building
-                            it...
+                            forms. The results will be your very own JBoss BPM Travel Agency.
                         </h5>
                     </div>
-                    <div style="width: 1056px; height: 100px;">
-                        <ul>
-                            <li><i><a href="lab01.html" style="color: red" target="_blank">JBoss BPM Travel Agency with JBoss BPM Suite 6.1 & JAVA 7 or 8</a></i></li>
-                        </ul>
+                    <div style="width: 1056px; height: 400px;">
+                        <h5 style="color: red"><b>Pre-requisits:</b> <i>Java 1.7 or 1.8, Maven 3.2, JBoss BPM Suite 6.1 installer, JBoss EAP 6.4 installer</i></h5>
+                    </div>
+				</section>
+
+                <section>
+                    <h3>Lab 01 - Install JBoss BPM Suite</h3>
+                </section>
+
+                <section data-background-color="white">
+                    <div style="width: 1056px; height: 150px;">
+                        <h2>Lab Goal</h2>
+                        <h4>To install and login to JBoss BPM Suite product</h4>
+                    </div>
+                    <div style="width: 1056px; height: 600px;">
+                        <img src="images/bpmsuite-arch.png">
                     </div>
                 </section>
 
+                <section>
+                    <h2>Install JBoss BPM Suite</h2>
+                    <ul>
+                        <li><a href="https://github.com/jbossdemocentral/bpms-install-demo/archive/master.zip" style="color: red" target="_blank">Download and unzip.</a></li>
+                        <li>Add product installers, see installs/README for details</li>
+                        <ul>
+                            <li><code>$ cp jboss-bpmsuite-6.1.0.GA-installer.jar brms-install-demo/installs/</code></li>
+                            <li><code>$ cp jboss-eap-6.4.0-installer.jar brms-install-demo/installs/</code></li>
+                        </ul>
+                        <li>run init.sh or init.bat</li>
+                        <ul>
+                            <li><code>$ ./init.sh</code></li>
+                        </ul>
+                        <li>follow instructions to start server</li>
+                        <ul>
+                            <li><code>$ ./target/jboss-eap-6.4/bin/standalone.sh</code></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="images/bpms-workshop/image1-01.png">
+				</section>
+
+                <section>
+					<h2>JBoss BPM Suite Standalone Configuration</h2>
+                    <ul>
+                        <li>Some properties set to lock location git repository</li>
+                        <li>Found in standalone.xml</li>
+                        <ul>
+                            <li><code>$ cat bpms-install-demo/support/standalone.xml</code></li>
+                            <li><code>&lt;property name="org.uberfire.nio.git.dir" value="${jboss.home.dir}/bin"/&gt;</code></li>
+                        </ul>
+                        <li>Means all projects stored in .niogit/* can be found here:</li>
+                        <ul>
+                            <li><code>bpms-install-demo/target/jboss-eap-6.4/bin/.niogit/</code></li>
+                        </ul>
+                    </ul>
+				</section>
+
+                <section>
+                    <h2>JBoss BPM Suite User Configuration</h2>
+                    <ul>
+                        <li>User configuration was automated</li>
+                        <li>Support directory contains user configuration files</li>
+                        <ul>
+                            <li><code>$ cat support/application-roles.properties</code></li>
+                        </ul>
+                        <li>Installed into:</li>
+                        <ul>
+                            <li><code>target/jboss-eap-6.4/standalone/configuration/</code></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite Users</h2>
+                    <ul>
+                        <li>There are 5 user roles:</li>
+                        <ul>
+                            <li><strong>admin</strong> - full access to product</li>
+                            <li><strong>developer</strong> - full access, except Administration</li>
+                            <li><strong>analyst</strong> - developer access, except assets & deployments</li>
+                            <li><strong>user</strong> - only manage processes, tasks, view reports</li>
+                            <li><strong>manager</strong> - most restrictive, only view reports</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite Users</h2>
+                    <ul>
+                        <li>This user has all roles in project needed:</li>
+                        <ul>
+                            <li><code>erics  -  bpmsuite1!</code></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Login to JBoss BPM Suite</h2>
+                    <ul>
+                        <li>Business Central: <a href="http://localhost:8080/business-central" style="color: red" target="_blank">http://localhost:8080/business-central</a></li>
+                        <ul>
+                            <li>user: <code>erics</code></li>
+                            <li>password: <code>bpmsuite1!</code></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="images/bpms-workshop/image1-02.png">
+                </section>
+
+                <section>
+                    <img src="images/bpms-workshop/image1-03.png">
+                </section>
+
+                <section data-background="images/jteimages/image42.png" data-background-position="top">
+                    <div style="width: 1056px; height: 450px;" align="right">
+                    </div>
+                    <div style="width: 1156px; height: 100px;" align="right">
+                        <div style="width: 500px; height: 100px;" align="left">
+                            Eric D. Schabell<br>
+                            JBoss Technology Evangelist<br>
+                            <a href="http://twitter.com/ericschabell" target="_blank">@ericschabell</a><br>
+                            <a href="http://schabell.org" target="_blank">http://schabell.org</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div align="center">
+                        <img height="150" width="99%" src="images/references.jpg">
+                    </div>
+                    <ul>
+                        <li>JBoss BPM Suite Articles</li>
+                        <ul>
+                            <li><a href="http://schabell.org/search/label/BPMS" style="color: red" target="_blank">http://schabell.org/search/label/BPMS</a></li>
+                        </ul>
+                        <li>JBoss BPM Suite Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/12/3-reasons-you-need-new-jboss-travel-agency.html" style="color: red" target="_blank">Travel Agency Demo</a></li>
+                            <li><a href="http://www.schabell.org/2015/05/micro-services-migration-story-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">Travel Agency Microservices Demo</a></li>
+                            <li><a href="http://www.schabell.org/2015/03/jboss-bpmsuite-helping-travelers-with-lost-bags.html" style="color: red" target="_blank">Baggage Delivery Demo</a></li>
+                        </ul>
+                        <li>JBoss bpmPaaS Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html" style="color: red" target="_blank">bpmPaaS Generic Loan Process in the Cloud</a></li>
+                            <li><a href="http://www.schabell.org/2015/02/into-clouds-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">bpmPaaS Travel Agency in the Cloud</a></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite Workshop</h2>
+                    <h3><a href="lab02.html"  style="color: red" target="_blank">Lab 02 - Create a new project</a></h3>
+                </section>
             </div>
 		</div>
 
